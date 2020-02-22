@@ -19,7 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('avatar_url')->nullable();
             $table->string('first_name');
             $table->string('last_name');
-            $table->rememberToken();
+            $table->string('api_token', 80)
+                ->unique()
+                ->nullable();
             $table->timestamps();
         });
     }

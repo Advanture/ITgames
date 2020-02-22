@@ -24,7 +24,7 @@ class VkService
     {
         $user = $this->getUserInstance($userData, $email);
 
-        auth()->login($user, true);
+        auth()->login($user, false);
 
         return $user;
     }
@@ -102,5 +102,19 @@ class VkService
         return json_decode(
             $response->getBody()->getContents()
         )->response[0];
+    }
+
+    /**
+     * @param Authenticatable $user
+     * @return string
+     */
+    public function setToken(Authenticatable $user): string
+    {
+        $token = Str::random(60);
+        $user->update([
+            'api_token' => hash('sha256', $token),
+        ]);
+
+        return $token;
     }
 }

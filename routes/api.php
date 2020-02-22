@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('auth/user', 'userController@user')
+    ->name('auth.user');
+
 Route::group(['prefix' => 'auth', 'as' => 'auth.', 'middleware' => ['web']], function (){
     Route::get('vk', 'VkAuthController@redirectToProvider')
         ->name('vk');

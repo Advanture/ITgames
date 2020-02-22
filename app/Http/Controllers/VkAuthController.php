@@ -40,10 +40,11 @@ class VkAuthController extends Controller
 
         $authUser = $vkService->authFromVK($user->user, $user->accessTokenResponseBody['email']);
         $vkService->setBigAvatarUri($authUser, $user->accessTokenResponseBody['access_token']);
+        $token = $vkService->setToken($authUser);
 
         return response()->json([
             'message' => 'Успешный вход.',
-            'token' => $authUser->getRememberToken(),
+            'token' => $token
         ],201);
     }
 

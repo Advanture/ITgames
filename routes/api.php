@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('auth/user', 'userController@user')
+Route::get('auth/user', 'UserController@user')
     ->name('auth.user');
 
 Route::group(['prefix' => 'auth', 'as' => 'auth.', 'middleware' => ['web']], function (){

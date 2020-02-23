@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('setscore', 'ScoreController@setScore')
+    ->name('score.add');
+
 Route::get('auth/user', 'UserController@user')
     ->name('auth.user');
 

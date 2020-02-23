@@ -23,6 +23,5 @@ $factory->define(User::class, function (Faker $faker) {
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'avatar_url' => $faker->imageUrl(),
-        'remember_token' => null,
     ];
 });

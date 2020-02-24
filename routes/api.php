@@ -24,6 +24,7 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.', 'middleware' => ['web']], fun
         ->name('vk');
     Route::get('vk/callback', 'VkAuthController@handleProviderCallback')
         ->name('vk.callback');
-    Route::post('logout', 'VkAuthController@logout')
-        ->name('logout');
+    Route::get('logout', 'VkAuthController@logout')
+        ->name('logout')
+        ->middleware('auth:api');
 });

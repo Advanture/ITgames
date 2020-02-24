@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\VkService;
 use GuzzleHttp\Exception\ClientException;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\InvalidStateException;
@@ -48,9 +49,14 @@ class VkAuthController extends Controller
         ],201);
     }
 
-    public function logout(): RedirectResponse
+    /**
+     * @return JsonResponse
+     */
+    public function logout()
     {
-        auth()->logout();
+        $authUser = auth()->user();
+        $authUser->api_token = null;
+        $authUser->save();
 
         return response()->json([
             'message' => 'Успешный выход!'

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00cb4ed7-0917-4a90-a934-7c6d4fed639f" name="Default Changelist" comment="" />
+    <list default="true" id="00cb4ed7-0917-4a90-a934-7c6d4fed639f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VkAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VkAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +118,8 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Y8OL0yc6f10rAjAccic1ZvsGie" />
@@ -154,7 +160,8 @@
       <workItem from="1582384931646" duration="4433000" />
       <workItem from="1582454394693" duration="367000" />
       <workItem from="1582488447178" duration="1436000" />
-      <workItem from="1582498345056" duration="2355000" />
+      <workItem from="1582498345056" duration="3143000" />
+      <workItem from="1582548714827" duration="300000" />
     </task>
     <servers />
   </component>

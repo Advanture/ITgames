@@ -36,7 +36,8 @@ class ScoreController extends Controller
         }
 
         return response()->json([
-            'message' => 'Успешно!'
+            'request' => $request->all(),
+            'validated' => $validated,
         ], 201);
     }
 }

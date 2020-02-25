@@ -123,7 +123,7 @@
   <component name="ProjectId" id="1Y8OL0yc6f10rAjAccic1ZvsGie" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PlayIT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -160,6 +160,7 @@
       <workItem from="1582488447178" duration="1436000" />
       <workItem from="1582498345056" duration="3143000" />
       <workItem from="1582548714827" duration="1932000" />
+      <workItem from="1582642971898" duration="290000" />
     </task>
     <servers />
   </component>

@@ -24,8 +24,8 @@ class ScoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'score' => 'required|integer',
-            'code' => 'required|string',
+            'score' => 'required',
+            'code' => 'required',
         ];
     }
 }

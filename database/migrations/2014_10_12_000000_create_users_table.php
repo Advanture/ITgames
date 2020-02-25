@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
                 ->nullable();
             $table->integer('score')
                 ->default(0);
-            $table->timestamps();
         });
     }
 

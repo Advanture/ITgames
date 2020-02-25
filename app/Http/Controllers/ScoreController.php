@@ -14,29 +14,29 @@ class ScoreController extends Controller
 
     public function setScore(ScoreRequest $request)
     {
-        //$authUser = auth()->user();
-        //$vk_id = $authUser->vk_id;
+        $authUser = auth()->user();
+        $vk_id = $authUser->vk_id;
 
         $validated = $request->validated();
 
-        return response()->json([
-            'message' => $validated['code']
-        ], 201);
+        $data = $vk_id.$validated['score'];
+        $hashedData = md5(md5($data));
 
-//        $data = $vk_id.$validated['score'];
-//        $hashedData = md5(md5($data));
-//
-//        if($hashedData !== $validated['code'])
-//        {
-//            return response()->json([
-//                'message' => 'Ошибка!'
-//            ], 401);
-//        }
-//
-//        $authUser->score += $validated['score'];
-//
-//        return response()->json([
-//            'message' => 'Успешно!'
-//        ], 201);
+        if($hashedData !== $validated['code'])
+        {
+            return response()->json([
+                'message' => 'Ошибка!'
+            ], 401);
+        }
+
+        if($authUser->score < $validated['score'])
+        {
+            $authUser->score = $validated['score'];
+            $authUser->save();
+        }
+
+        return response()->json([
+            'message' => 'Успешно!'
+        ], 201);
     }
 }

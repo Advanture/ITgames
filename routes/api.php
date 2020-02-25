@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('rating', 'UserController@rating')
+    ->name('user.rating');
+
 Route::post('setscore', 'ScoreController@setScore')
     ->name('score.add');
 

@@ -25,9 +25,7 @@ class ScoreController extends Controller
         if($hashedData !== $validated['code'])
         {
             return response()->json([
-                'message' => 'Ошибка!',
-                'request' => $request->all(),
-                'validated' => $validated,
+                'message' => 'Ошибка!'
             ], 401);
         }
 
@@ -38,8 +36,7 @@ class ScoreController extends Controller
         }
 
         return response()->json([
-            'request' => $request->all(),
-            'validated' => $validated,
+            'message' => 'Успешно!'
         ], 201);
     }
 }

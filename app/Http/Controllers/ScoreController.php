@@ -22,15 +22,12 @@ class ScoreController extends Controller
         $data = $vk_id.$validated['score'];
         $hashedData = md5(md5($data));
 
-        return response()->json([
-            'request' => $request->all(),
-            'validated' => $validated,
-        ], 201);
-
         if($hashedData !== $validated['code'])
         {
             return response()->json([
-                'message' => 'Ошибка!'
+                'message' => 'Ошибка!',
+                'request' => $request->all(),
+                'validated' => $validated,
             ], 401);
         }
 

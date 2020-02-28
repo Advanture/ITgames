@@ -34,12 +34,12 @@ class VkAuthController extends Controller
         try {
             $user = Socialite::driver('vkontakte')->stateless()->user();
         } catch (InvalidStateException $e) {  // If returned data is invalid
-            return redirect()->home();
+            return redirect('https://game-day-of-it-specialist-staging.server.bonch.dev/');
         } catch (ClientException $e) { // If access denied
-            return redirect()->home();
+            return redirect('https://game-day-of-it-specialist-staging.server.bonch.dev/');
         }
 
-        $authUser = $vkService->authFromVK($user->user, $user->accessTokenResponseBody['email']);
+        $authUser = $vkService->authFromVK($user->user);
         $vkService->setBigAvatarUri($authUser, $user->accessTokenResponseBody['access_token']);
         $token = $vkService->setToken($authUser);
 

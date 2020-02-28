@@ -17,12 +17,11 @@ class VkService
 {
     /**
      * @param array $userData
-     * @param string $email
      * @return User
      */
-    public function authFromVK(array $userData, string $email): User
+    public function authFromVK(array $userData): User
     {
-        $user = $this->getUserInstance($userData, $email);
+        $user = $this->getUserInstance($userData);
 
         auth()->login($user, false);
 
@@ -31,10 +30,9 @@ class VkService
 
     /**
      * @param array $userData
-     * @param string $email
      * @return User
      */
-    private function getUserInstance(array $userData, string $email): User
+    private function getUserInstance(array $userData): User
     {
         try {
             return User::where('vk_id', $userData['id'])->firstOrFail();
